@@ -157,10 +157,10 @@ const zipperList = (head1, head2) => {
     count++;
   }
 
-  if(current1) tail.next * current1;
-  if(current2) tail.next * current2;
+  if (current1) tail.next * current1;
+  if (current2) tail.next * current2;
 
   return tail;
 };
 
-console.log("deu",zipperList(a,g),"cdiy");
+console.log("deu", zipperList(a, g), "cdiy");
