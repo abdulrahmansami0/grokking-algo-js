@@ -1,19 +1,19 @@
-const isPalindrom = (str) => {
-  let arr = [];
-  let result = [];
+// const isPalindrom = (str) => {
+//   let arr = [];
+//   let result = [];
 
-  for (let i = 0; i < str.length; i++) {
-    arr.push(str[i]);
-  }
+//   for (let i = 0; i < str.length; i++) {
+//     arr.push(str[i]);
+//   }
 
-  for (let i = arr.length - 1; i >= 0; i--) {
-    result.push(arr[i]);
-  }
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     result.push(arr[i]);
+//   }
 
-  return result.join("") === str;
-};
+//   return result.join("") === str;
+// };
 
-console.log(isPalindrom("ama"));
+// console.log(isPalindrom("ama"));
 
 // (function (str) {
 //   let reversed = "";
@@ -23,3 +23,30 @@ console.log(isPalindrom("ama"));
 //   console.log(reversed === str);
 // })("sts");
 
+var isPalindrome = function (s) {
+  let newStr = s.replace(/\,/g, "").toLowerCase();
+  newStr = newStr.replace(/\:/g, "");
+  newStr = newStr.replace(/\./g, "");
+  newStr = newStr.replace(/\@/g, "");
+  newStr = newStr.replace(/\#/g, "");
+  newStr = newStr.replace(/\_/g, "");
+  newStr = newStr.replace(/\[/g, "");
+  newStr = newStr.replace(/\]/g, "");
+  newStr = newStr.replace(/\"/g, "");
+  newStr = newStr.replace(/\}/g, "");
+  newStr = newStr.replace(/\{/g, "");
+  newStr = newStr.replace(/\'/g, "");
+  newStr = newStr.replace(/\-/g, "");
+  newStr = newStr.replace(/\?/g, "");
+  newStr = newStr.replace(/\;/g, "");
+  newStr = newStr.replace(/\!/g, "");
+  newStr = newStr.replace(/\(/g, "");
+  newStr = newStr.replace(/\)/g, "");
+  newStr = newStr.replace(/\`/g, "");
+  newStr = newStr.replace(/\s/g, "");
+
+  let newStr2 = newStr.split("").reverse().join("");
+  return newStr2 === newStr;
+};
+
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
