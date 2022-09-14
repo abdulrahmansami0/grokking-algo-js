@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-var maximumWealth = function (accounts) {
+const maximumWealth = (accounts) => {
   let customersArray = [];
   for (let i = 0; i < accounts.length; ++i) {
     let customerCost = 0;
