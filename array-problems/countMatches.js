@@ -11,8 +11,12 @@ const countMatches = (items, ruleKey, ruleValue) => {
   return count;
 };
 
-let items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]];
+let items = [
+  ["phone", "blue", "pixel"],
+  ["computer", "silver", "lenovo"],
+  ["phone", "gold", "iphone"],
+];
 let ruleKey = "color";
 let ruleValue = "silver";
 
-countMatches(items, ruleKey, ruleValue)
+countMatches(items, ruleKey, ruleValue);
