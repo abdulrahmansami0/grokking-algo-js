@@ -23,7 +23,7 @@ console.log(decompressRLElist([1, 2, 3, 4]));
 const decompressRLElist2 = (nums) => {
   const result = [];
 
-  for (let i = 1; i < n; i += 2) {
+  for (let i = 1; i < nums.length; i += 2) {
     result.push(...new Array(nums[i - 1]).fill(nums[i]));
   }
 
