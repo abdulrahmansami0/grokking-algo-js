@@ -3,6 +3,7 @@
  * @param {number} extraCandies
  * @return {boolean[]}
  */
+
 const kidsWithCandies = (candies, extraCandies) => {
   let result = [];
   for (let i = 0; i < candies.length; ++i) {
