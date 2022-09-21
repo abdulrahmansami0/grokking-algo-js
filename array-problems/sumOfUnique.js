@@ -12,7 +12,6 @@ const sumOfUnique = (nums) => {
       hashMap[nums[i]]++;
     }
   }
-
   for (const [key, value] of Object.entries(hashMap)) {
     if (value === 1) {
       sum += +key;
