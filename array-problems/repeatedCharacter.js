@@ -25,17 +25,16 @@ console.log(repeatedCharacter("abccbaacz"));
  * @param {string} s
  * @return {character}
  */
-const repeatedCharacter2 = (s) => {
-  let map = new Map();
-  let stringArr = s.split("");
-  for (i = 0; i < stringArr.length; i++) {
-    if (map.has(stringArr[i])) {
-      return stringArr[i];
+const repeatedCharacte2 = (s) => {
+  let hashMap = {};
+  for (let i = 0; i < s.length; ++i) {
+    if (hashMap[s[i]]) {
+      return s[i];
     } else {
-      map.set(stringArr[i], 1);
+      hashMap[s[i]] = 1;
     }
   }
   return "";
 };
 
-console.log(repeatedCharacter2("abccbaacz"));
+console.log(repeatedCharacte2("abccbaacz"));
