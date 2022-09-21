@@ -20,3 +20,22 @@ const repeatedCharacter = (s) => {
   return null;
 };
 console.log(repeatedCharacter("abccbaacz"));
+
+/**
+ * @param {string} s
+ * @return {character}
+ */
+const repeatedCharacter2 = (s) => {
+  let map = new Map();
+  let stringArr = s.split("");
+  for (i = 0; i < stringArr.length; i++) {
+    if (map.has(stringArr[i])) {
+      return stringArr[i];
+    } else {
+      map.set(stringArr[i], 1);
+    }
+  }
+  return "";
+};
+
+console.log(repeatedCharacter2("abccbaacz"));
