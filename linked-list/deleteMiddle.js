@@ -57,3 +57,22 @@ const deleteMiddle = (head) => {
 };
 
 console.log(deleteMiddle(a));
+
+const deleteMiddle2 = (head) => {
+  if (head === null || head.next === null) return null;
+  let fast = head;
+  let slow = head;
+  let prev = head;
+  while (fast && fast.next) {
+    fast = fast.next.next;
+    prev = slow;
+    slow = slow.next;
+  }
+  prev.next = slow.next;
+  slow.next = null;
+  slow = prev;
+
+  return head;
+};
+
+console.log(deleteMiddle2(a));
