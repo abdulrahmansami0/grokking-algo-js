@@ -181,6 +181,26 @@ const deleteDuplicates = (head) => {
 
 console.log(deleteDuplicates(a));
 
+// remove element
+const removeElements = (head, val) => {
+  let dummy = new Node(-1);
+  dummy.next = head;
+  let current = head;
+  let prev = dummy;
+  while (current) {
+    if (current.value === val) {
+      prev.next = current.next;
+      current = current.next;
+    } else {
+      prev = current;
+      current = current.next;
+    }
+  }
+  return dummy.next;
+};
+
+console.log(removeElements(a, 300));
+
 const printLinkedList2 = (head) => {
   if (!head) return;
   console.log(head.value);
