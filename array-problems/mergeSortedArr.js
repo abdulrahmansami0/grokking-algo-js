@@ -1,5 +1,5 @@
 var merge = function (nums1, m, nums2, n) {
-  let newArr = [...nums1.slice(0, 3), ...nums2.slice(0, 3)];
+  let newArr = [...nums1.slice(0, m), ...nums2.slice(0, n)];
   return newArr.sort((a, b) => a - b);
 };
 
