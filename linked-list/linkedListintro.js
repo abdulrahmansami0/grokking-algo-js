@@ -9,6 +9,7 @@ const a = new Node(100);
 const b = new Node(200);
 const c = new Node(300);
 const d = new Node(400);
+const e = new Node(400);
 
 const g = new Node(888);
 const h = new Node(999);
@@ -16,10 +17,11 @@ const h = new Node(999);
 a.next = b;
 b.next = c;
 c.next = d;
+d.next = e;
 
 g.next = h;
 
-// A -> B -> C -> D -> null
+// A -> B -> C -> D -> E -> null
 
 // const printLinkedList = (head) => {
 //   let current = head;
@@ -128,39 +130,61 @@ console.log(getNodeValue(a, 2));
 //   return previous;
 // }
 
-const reverseLinkedList = (head, previous = null) => {
-  if (!head) return previous;
+// const reverseLinkedList = (head, previous = null) => {
+//   if (!head) return previous;
+//   let current = head;
+//   let next = current.next;
+//   current.next = previous;
+//   return reverseLinkedList(next, current);
+// };
+
+// console.log(reverseLinkedList(a));
+
+// const zipperList = (head1, head2) => {
+//   let tail = head1;
+//   let current1 = head1.next;
+//   let current2 = head2;
+//   let count = 0;
+
+//   while (current1 && current2) {
+//     if (count % 2 === 0) {
+//       tail.next = current2;
+//       current2 = current2.next;
+//     } else {
+//       tail.next = current1;
+//       current1 = current1.next;
+//     }
+//     tail = tail.next;
+//     count++;
+//   }
+
+//   if (current1) tail.next * current1;
+//   if (current2) tail.next * current2;
+
+//   return tail;
+// };
+
+// console.log(zipperList(a, g));
+
+// delete duplicate
+const deleteDuplicates = (head) => {
   let current = head;
-  let next = current.next;
-  current.next = previous;
-  return reverseLinkedList(next, current);
-};
-
-console.log(reverseLinkedList(a));
-
-// doesn't work
-const zipperList = (head1, head2) => {
-  let tail = head1;
-  let current1 = head1.next;
-  let current2 = head2;
-  let count = 0;
-
-  while (current1 && current2) {
-    if (count % 2 === 0) {
-      tail.next = current2;
-      current2 = current2.next;
+  while (current && current.next) {
+    if (current.value === current.next.value) {
+      current.next = current.next.next;
     } else {
-      tail.next = current1;
-      current1 = current1.next;
+      current = current.next;
     }
-    tail = tail.next;
-    count++;
   }
-
-  if (current1) tail.next * current1;
-  if (current2) tail.next * current2;
-
-  return tail;
+  return head;
 };
 
-console.log("deu", zipperList(a, g), "cdiy");
+console.log(deleteDuplicates(a));
+
+const printLinkedList2 = (head) => {
+  if (!head) return;
+  console.log(head.value);
+  printLinkedList(head.next);
+};
+
+printLinkedList2(a);
