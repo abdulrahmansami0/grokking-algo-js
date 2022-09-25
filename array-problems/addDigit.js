@@ -1,3 +1,8 @@
+/**
+ * 
+ * @return {38 --> 3 + 8 --> 11} 
+ * @return {11 --> 1 + 1 --> 2 } 
+ */
 var addDigits = (num) => {
   let digit = [];
   digit = String(num).split("");
@@ -5,7 +10,6 @@ var addDigits = (num) => {
     let numSum = digit.reduce((total, num) => {
       return +total + Math.round(num);
     }, 0);
-
     digit = String(numSum).split("");
   }
 
@@ -13,3 +17,4 @@ var addDigits = (num) => {
 };
 
 console.log(addDigits(38));
+
