@@ -12,12 +12,10 @@ const majorChar = (str) => {
   let max = 0;
   let maxChar = "";
   for (let i = 0; i < str.length; i++) {
-    if (hashChar[str[i]]) {
       if (max < hashChar[str[i]][1]) {
         max = hashChar[str[i]][1];
         maxChar = str[i];
       }
-    }
   }
 
   return [maxChar, max];

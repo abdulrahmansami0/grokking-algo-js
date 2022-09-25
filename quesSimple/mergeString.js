@@ -17,4 +17,4 @@ var mergeAlternately = function (word1, word2) {
   return newStr.join("");
 };
 
-mergeAlternately("abd", "cdf");
+console.log(mergeAlternately("abd", "cdf"));
