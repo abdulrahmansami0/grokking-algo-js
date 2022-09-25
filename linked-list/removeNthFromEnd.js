@@ -33,7 +33,7 @@ d.next = e;
 e.next = f;
 f.next = g;
 
-var removeNthFromEnd = function (head, n) {
+const removeNthFromEnd = (head, n) => {
   if (head === null) return null;
   if (head.next === null) return null;
   let dummy = new Node(-1);
