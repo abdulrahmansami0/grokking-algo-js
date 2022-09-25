@@ -37,6 +37,5 @@ const removeDuplicateElement = (head) => {
     }
     outerNode = outerNode.nextElement;
   }
-
   return head;
 };
