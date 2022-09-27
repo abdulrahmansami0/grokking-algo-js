@@ -50,3 +50,19 @@ var isPalindrome = function (s) {
 };
 
 console.log(isPalindrome("A man, a plan, a canal: Panama"));
+
+// O(n) time and O(1) space
+const isPalindrome2 = (string) => {
+  let left = 0;
+  let right = string.length - 1;
+  while (left < right) {
+    if (string[left] !== string[right]) {
+      return false
+    }
+    left++;
+    right--;
+  }
+  return true;
+};
+
+console.log(isPalindrome2("A man, a plan, a canal: Panama"));
