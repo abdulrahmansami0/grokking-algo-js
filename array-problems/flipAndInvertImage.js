@@ -13,8 +13,8 @@ const flipAndInvertImage = (image) => {
   return image;
 };
 
-console.log([
+console.log(flipAndInvertImage([
   [1, 1, 0],
   [1, 0, 1],
   [0, 0, 0],
-]);
+]));
