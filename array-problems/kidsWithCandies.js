@@ -23,4 +23,4 @@ const kidsWithCandies = (candies, extraCandies) => {
 
 let candies = [2, 3, 5, 1, 3];
 let extraCandies = 3;
-kidsWithCandies(candies, extraCandies);
+console.log(kidsWithCandies(candies, extraCandies));
