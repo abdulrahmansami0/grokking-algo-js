@@ -7,7 +7,8 @@ const removeElement = function (nums, val) {
       nums[count++] = nums[i];
     }
   }
-  return nums;
+
+  return nums.slice(0, count - nums.length);
 };
 
 let nums = [0, 1, 2, 2, 3, 0, 4, 2];
