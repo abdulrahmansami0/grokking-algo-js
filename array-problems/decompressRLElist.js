@@ -29,4 +29,5 @@ const decompressRLElist2 = (nums) => {
 
   return result;
 };
-console.log(decompressRLElist([1, 2, 3, 4]));
+console.log(decompressRLElist2([1, 2, 3, 4]));
+
