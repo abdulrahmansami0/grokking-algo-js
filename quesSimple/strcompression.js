@@ -12,7 +12,7 @@ const strCompression = (str) => {
     }
   }
   if (uniqCount === str.length) return str;
-  else return output;
+  return output;
 };
 
 console.log(strCompression("aabbcccffghh"));
