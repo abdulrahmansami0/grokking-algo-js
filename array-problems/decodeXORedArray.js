@@ -13,3 +13,5 @@ const decode = (encoded, first) => {
 
   return arr;
 };
+
+console.log(decode((encoded = [1, 2, 3]), (first = 1)));
