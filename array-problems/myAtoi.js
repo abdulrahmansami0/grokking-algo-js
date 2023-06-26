@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {number}
  */
-var myAtoi = function (s) {
+const myAtoi = (s) => {
   let parsed = parseInt(s, 10);
 
   if (isNaN(parsed)) {
