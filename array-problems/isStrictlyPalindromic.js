@@ -4,8 +4,18 @@
  */
 
 const isPalindromic = (num) => {
-  let rvsNum = String(num).split("").reverse().join("");
-  return num === rvsNum;
+  let left = 0;
+  let right = num.length - 1;
+
+  while (left < right) {
+    if (num[left] !== num[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+
+  return true;
 };
 const isStrictlyPalindromic = (n) => {
   for (let i = 2; i < n; ++i) {
