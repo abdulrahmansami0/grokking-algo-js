@@ -128,9 +128,48 @@ const maxPathSum = (root) => {
   if (!root) return -Infinity;
   if (!root.left) return root.value;
   if (!root.right) return root.value;
-  const maxChildPathSum = Math.max(maxPathSum(root.left), maxPathSum(root.right));
+  const maxChildPathSum = Math.max(
+    maxPathSum(root.left),
+    maxPathSum(root.right)
+  );
   return root.value + maxChildPathSum;
-}; 
+};
 
 console.log(maxPathSum(A));
 
+function dfs(root) {
+  // Base case: If the current node is null (empty), return.
+  if (root === null) {
+    return; // or perform any necessary operations for null node
+  }
+
+  // Perform pre-order traversal operation here (before recursion)
+
+  // Recursive DFS traversal for the left subtree
+  dfs(root.left);
+
+  // Perform in-order traversal operation here (between recursive calls)
+
+  // Recursive DFS traversal for the right subtree
+  dfs(root.right);
+
+  // Perform post-order traversal operation here (after recursion)
+}
+
+function maxDepth(root) {
+  // Base case: If the current node is null (empty), return.
+  if (root === null) {
+    return; // or perform any necessary operations for null node
+  }
+
+  const leftDepth = maxDepth(root.left);
+
+  console.log(root.left, root.right);
+  // Recursive DFS traversal for the right subtree
+  const rightDepth = maxDepth(root.right);
+
+  // Return the maximum depth of the left and right subtrees plus one for the current node
+  return Math.max(leftDepth, rightDepth) + 1;
+}
+
+console.log(maxDepth(A));

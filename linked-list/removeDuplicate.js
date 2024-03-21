@@ -23,13 +23,9 @@ f.next = g;
 const removeDuplicateElement = (head) => {
   let outerNode = head;
   while (outerNode != null) {
-    let innerNode = outerNode; // Iterator for the inner loop
-    while (innerNode != null) {
-      if (
-        innerNode.nextElement != null &&
-        outerNode.data == innerNode.nextElement.data
-      ) {
-        //Duplicate found ahead
+    let innerNode = outerNode;
+    while (innerNode != null && innerNode.nextElement != null) {
+      if (outerNode.value == innerNode.nextElement.value) {
         innerNode.nextElement = innerNode.nextElement.nextElement; // Remove duplicate
       } else {
         innerNode = innerNode.nextElement; // Otherwise simply iterate ahead
@@ -37,5 +33,22 @@ const removeDuplicateElement = (head) => {
     }
     outerNode = outerNode.nextElement;
   }
-  return head;
+  return head; // Return the modified linked list itself
 };
+
+// console.log(removeDuplicateElement(a));
+
+// 100 -> 200 -> 300 -> 400 -> 300 -> 600 -> 700
+
+const removeDuplicateFromLinkedList = (head) => {
+  let current = head;
+  while (current !== null) {
+    while (current.next !== null && current.value === current.next.value) {
+      current.next = current.next.next;
+    }
+    current = current.next;
+  }
+  return head; // Return the modified linked list itself
+};
+
+console.log(removeDuplicateFromLinkedList(a));

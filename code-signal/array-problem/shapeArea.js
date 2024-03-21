@@ -1,4 +1,4 @@
-const shapArea = () => {
+const shapArea = (n) => {
     return (n*n) + (n-1)*(n-1)
 }
 
