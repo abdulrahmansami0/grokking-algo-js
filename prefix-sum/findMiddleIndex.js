@@ -3,22 +3,24 @@
  * @return {number}
  */
 var findMiddleIndex = function (nums) {
-  let sum = 0;
+  let totalSum = 0;
 
   for (let i = 0; i < nums.length; ++i) {
-    sum += nums[i];
+    totalSum += nums[i];
   }
 
-  if (sum - nums[0] === 0) return 0;
+  if (totalSum - nums[0] === 0) return 0;
   let leftSum = 0;
-  sum -= nums[0];
+  totalSum -= nums[0];
   for (let i = 1; i < nums.length; ++i) {
     leftSum += nums[i - 1];
-    sum -= nums[i];
-    if (leftSum === sum) {
+    totalSum -= nums[i];
+    if (leftSum === totalSum) {
       return i;
     }
   }
 
   return -1;
 };
+
+//  let suffixSum = totalSum - prefixSum
