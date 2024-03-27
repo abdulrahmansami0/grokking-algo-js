@@ -20,22 +20,29 @@ B.right = E;
 C.right = F;
 
 const depthFirstValues = (root) => {
+  if (!root) return [];
+
   const result = [];
   const stack = [root];
   while (stack.length) {
     const current = stack.pop();
-
     result.push(current.value);
-    if (current.left) {
-      stack.push(current.left);
-    }
-    if (current.right) {
-      stack.push(current.right);
-    }
+
+    if (current.right) stack.push(current.right);
+    if (current.left) stack.push(current.left);
   }
   return result;
 };
 console.log(depthFirstValues(A));
+
+const depthFirstValuesRecursive = (root) => {
+  if (!root) return [];
+  const left = depthFirstValuesRecursive(root.left);
+  const right = depthFirstValuesRecursive(root.right);
+  return [root.value, ...left, ...right];
+};
+
+console.log(depthFirstValuesRecursive(A), "recursive");
 
 const breadthFirstSearch = (root) => {
   if (root === null) return [];
@@ -43,9 +50,10 @@ const breadthFirstSearch = (root) => {
   const queue = [root];
   const result = [];
   let current;
+
   while (queue.length) {
     current = queue.shift();
-    result.push(current);
+    result.push(current.value);
 
     if (current.left) queue.push(current.left);
     if (current.right) queue.push(current.right);
@@ -66,6 +74,8 @@ console.log(breadthFirstSearch(A));
 //     if (current.left) queue.push(current.left);
 //     if (current.right) queue.push(current.right);
 //   }
+//
+//   return false;
 // };
 
 // recursive
@@ -135,7 +145,7 @@ const maxPathSum = (root) => {
   return root.value + maxChildPathSum;
 };
 
-console.log(maxPathSum(A));
+console.log(maxPathSum(A), "maxPathSum");
 
 function dfs(root) {
   // Base case: If the current node is null (empty), return.
